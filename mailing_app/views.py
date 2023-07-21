@@ -108,13 +108,6 @@ class AttemptMailingDeleteView(DeleteView):
     success_url = reverse_lazy('mailing_app:attempt_mails_list')
 
 
-# def clear_db_attempt_mails(request):
-#     if request.method == 'POST':
-#         records = AttemptMailing.objects.all()
-#         records.delete()
-#         success_url = reverse_lazy('mailing_app:attempt_mails_list')
-#     return render(request, 'mailing_app/clear_db_attempt_mails.html')
-
 def clear_db_attempt_mails(request):
     if request.method == 'POST':
         records = AttemptMailing.objects.all()
