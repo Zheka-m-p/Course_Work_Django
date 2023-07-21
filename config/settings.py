@@ -26,7 +26,7 @@ load_dotenv(dotenv_path=env_path)
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -79,30 +79,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {  # работает, но когда все насройки указаны, но не с суперпользователя базаданных
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',  # ругается на psycopg2, надо 'django.db.backends.postgresql_psycopg2'
-#         'NAME': 'django_1',  # базу надо создать БЕЗ КОВЫЧЕК, иначе не будет работать!
-#         'USER': 'django',
-#
-#         'HOST': 'localhost',  #
-#         'PORT': 5432,  #
-#         'PASSWORD': 'password',  #
-#
-#     }
-# }
 
 DATABASES = {  # но так не хочет работать, если на полную ставить заполнение. надо убрать host, post, password
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         # ругается на psycopg2, надо 'django.db.backends.postgresql_psycopg2'
-        'NAME': 'django_course_work_1',  # базу надо создать БЕЗ КОВЫЧЕК, иначе не будет работать!
-        'USER': 'postgres',
-
-        # 'HOST': 'localhost',  # с только за коменченным локалхостом работает, так же работает если лишнее тоже убрать
-        # 'PORT': 5432,  #
-        # 'PASSWORD': 12345,  #
-
+        'NAME': os.getenv('NAME_DB'),  # базу надо создать БЕЗ КОВЫЧЕК, иначе не будет работать!
+        'USER': os.getenv('USER_DB'),
     }
 }
 
@@ -154,7 +137,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER') # КАКОЙ-ТО ящик, либо личный, либо тестовый
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')  # КАКОЙ-ТО ящик, либо личный, либо тестовый
 # EMAIL_HOST_USER = None
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 # EMAIL_HOST_PASSWORD = None
@@ -176,8 +159,7 @@ if CACHE_ENABLED:
         }
     }
 
-
 CRONJOBS = [
-    ('*/1 * * * *', 'mailing_app.sup_service.test_send_mail'),
+    ('*/1 * * * *', 'mailing_app.service.auto_mailing'),
     ('*/1 * * * *', 'mailing_app.cron_test.add_rand_client'),
 ]

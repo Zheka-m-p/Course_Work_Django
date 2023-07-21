@@ -14,6 +14,8 @@ def hello(request):
 
 class ClientListView(ListView):
     model = Client
+    # template_name = 'mailing/client/client_form.html'  добавить путь, чтобы было можно был в папки долбавлять
+
 
 
 class ClientCreateView(CreateView):
@@ -100,6 +102,7 @@ class AttemptMailingListView(ListView):
 class AttemptMailingDetailView(DetailView):
     model = AttemptMailing
     fields = '__all__'
+
 
 
 class AttemptMailingDeleteView(DeleteView):

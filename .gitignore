@@ -4,3 +4,9 @@ __pycache__/
 .cache
 /.cache
 .env/
+
+# Project exclude paths
+env/
+.env
+*.pyc
+__pycache__
