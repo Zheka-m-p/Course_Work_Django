@@ -1,0 +1,23 @@
+{% extends 'mailing_app/base.html' %}
+{% block content %}
+<table class="table table-dark">
+    <tbody>
+    <tr>
+        <td>Время и дата последней отправки :</td>
+        <td>{{ object.last_attempt_date_time }}</td>
+    </tr>
+    <tr>
+        <td>Статус доставки :</td>
+        <td>{{ object.status }}</td>
+    </tr>
+    <tr>
+        <td>Получатель :</td>
+        <td>{{ object.server_response }}</td>
+    </tr>
+    </tbody>
+</table>
+
+<td><a class="p-2 btn btn-danger" href="{% url 'mailing_app:delete_attempt_mails' object.pk %}">удалить</a></td>
+<td><a class="p-2 btn btn-info" href="{% url 'mailing_app:attempt_mails_list' %}">назад</a></td>
+
+{% endblock %}

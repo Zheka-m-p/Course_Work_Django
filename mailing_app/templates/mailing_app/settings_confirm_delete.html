@@ -1,0 +1,19 @@
+{% extends 'mailing_app/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <p>
+                        Вы действительно хотите удалить {{ object.fio }}" <br> c почтой "{{ object.email }}"
+                    </p>
+                    <button class="btn btn-danger" type="submit">Удалить</button>
+                    <a class="btn btn-primary" href="{% url 'mailing_app:client_list' %}">Передумал</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

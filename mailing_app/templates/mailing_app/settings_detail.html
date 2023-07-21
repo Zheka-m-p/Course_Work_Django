@@ -1,0 +1,36 @@
+{% extends 'mailing_app/base.html' %}
+{% block content %}
+<table class="table table-dark">
+    <tbody>
+    <tr>
+        <td>Время :</td>
+        <td>{{ object.time }}</td>
+    </tr>
+    <tr>
+        <td>Период :</td>
+        <td>{{ object.period }}</td>
+    </tr>
+    <tr>
+        <td>Статус :</td>
+        <td>{{ object.status }}</td>
+    </tr>
+    <tr>
+        <td>Тема письма :</td>
+        <td>{{ object.message }}</td>
+    </tr>
+    <tr>
+        <td>Адреса для рассылки :</td>
+        <td>
+            {% for k in object.addresses_spam.all %}
+            {{ k }} <br>
+            {% endfor %}
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<td><a class="p-2 btn btn-warning" href="{% url 'mailing_app:update_settings' object.pk %}">обновить</a></td>
+<td><a class="p-2 btn btn-danger" href="{% url 'mailing_app:delete_settings' object.pk %}">удалить</a></td>
+<td><a class="p-2 btn btn-info" href="{% url 'mailing_app:settings_list' %}">назад</a></td>
+
+{% endblock %}

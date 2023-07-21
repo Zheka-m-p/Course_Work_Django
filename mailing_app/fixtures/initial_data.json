@@ -1,0 +1,200 @@
+[
+    {
+        "model": "mailing_app.client",
+        "pk": 15,
+        "fields": {
+            "email": "chernik.dota@mail.ru",
+            "fio": "Черников Евгений Викторович",
+            "comment": "Будущий программист"
+        }
+    },
+    {
+        "model": "mailing_app.client",
+        "pk": 16,
+        "fields": {
+            "email": "chernik.dota10@mail.ru",
+            "fio": "Черников Евгений Викторович",
+            "comment": "это вторая почта этого же клиента, вдруг на первой не заметит сообщения"
+        }
+    },
+    {
+        "model": "mailing_app.client",
+        "pk": 17,
+        "fields": {
+            "email": "Chernik.m-p@yandex.ru",
+            "fio": "Евгений Викторович",
+            "comment": "Бывший работник Яндекса"
+        }
+    },
+    {
+        "model": "mailing_app.client",
+        "pk": 18,
+        "fields": {
+            "email": "Nechushestvuishieemal100infazybday@mailblabla.combla134",
+            "fio": "Форест Не Гамп",
+            "comment": "Несуществующий человек"
+        }
+    },
+    {
+        "model": "mailing_app.client",
+        "pk": 19,
+        "fields": {
+            "email": "st016361@gmail.com",
+            "fio": "Евгений gmail",
+            "comment": "Тестовая почта для проверки, может и не отправить"
+        }
+    },
+    {
+        "model": "mailing_app.settings",
+        "pk": 6,
+        "fields": {
+            "time": "06:00:00",
+            "period": "day",
+            "status": "launched",
+            "message": 6,
+            "addresses_spam": [
+                15,
+                16,
+                19
+            ]
+        }
+    },
+    {
+        "model": "mailing_app.settings",
+        "pk": 7,
+        "fields": {
+            "time": "21:00:00",
+            "period": "week",
+            "status": "launched",
+            "message": 8,
+            "addresses_spam": [
+                17,
+                18
+            ]
+        }
+    },
+    {
+        "model": "mailing_app.message",
+        "pk": 4,
+        "fields": {
+            "title": "бесплатный чай",
+            "body": "индийский чай"
+        }
+    },
+    {
+        "model": "mailing_app.message",
+        "pk": 6,
+        "fields": {
+            "title": "Как войти в айти",
+            "body": "В наше время профессия в сфере айти очень востребована и хорошо оплачиемая. Любой может попробовать и у него обязательно получиться. Надо просто чуь больше усердия и настойчивости. И тогда превознемогая все трудности вы будете хорошим специалистом, которого заберут с руками и ногаи на любую работу!"
+        }
+    },
+    {
+        "model": "mailing_app.message",
+        "pk": 8,
+        "fields": {
+            "title": "Быстрый легкие деньги",
+            "body": "Приходите работать курьером, можно получать до 100 тыс. в месяц!!!\r\nЕсли заинтерсовались звоните по номеру\r\n8-800-2000-600"
+        }
+    },
+    {
+        "model": "mailing_app.attemptmailing",
+        "pk": 117,
+        "fields": {
+            "last_attempt_date_time": "2023-07-21T02:45:27.077Z",
+            "status": "delivered",
+            "server_response": "Chernik.m-p@yandex.ru",
+            "settings_pk": 7
+        }
+    },
+    {
+        "model": "mailing_app.attemptmailing",
+        "pk": 118,
+        "fields": {
+            "last_attempt_date_time": "2023-07-21T02:45:27.077Z",
+            "status": "delivered",
+            "server_response": "Nechushestvuishieemal100infazybday@mailblabla.combla134",
+            "settings_pk": 7
+        }
+    },
+    {
+        "model": "mailing_app.attemptmailing",
+        "pk": 119,
+        "fields": {
+            "last_attempt_date_time": "2023-07-21T02:45:28.822Z",
+            "status": "delivered",
+            "server_response": "chernik.dota@mail.ru",
+            "settings_pk": 6
+        }
+    },
+    {
+        "model": "mailing_app.attemptmailing",
+        "pk": 120,
+        "fields": {
+            "last_attempt_date_time": "2023-07-21T02:45:28.822Z",
+            "status": "delivered",
+            "server_response": "chernik.dota10@mail.ru",
+            "settings_pk": 6
+        }
+    },
+    {
+        "model": "mailing_app.attemptmailing",
+        "pk": 121,
+        "fields": {
+            "last_attempt_date_time": "2023-07-21T02:45:28.822Z",
+            "status": "delivered",
+            "server_response": "st016361@gmail.com",
+            "settings_pk": 6
+        }
+    },
+    {
+        "model": "mailing_app.attemptmailing",
+        "pk": 122,
+        "fields": {
+            "last_attempt_date_time": "2023-07-21T02:45:47.905Z",
+            "status": "delivered",
+            "server_response": "Chernik.m-p@yandex.ru",
+            "settings_pk": 7
+        }
+    },
+    {
+        "model": "mailing_app.attemptmailing",
+        "pk": 123,
+        "fields": {
+            "last_attempt_date_time": "2023-07-21T02:45:47.905Z",
+            "status": "delivered",
+            "server_response": "Nechushestvuishieemal100infazybday@mailblabla.combla134",
+            "settings_pk": 7
+        }
+    },
+    {
+        "model": "mailing_app.attemptmailing",
+        "pk": 124,
+        "fields": {
+            "last_attempt_date_time": "2023-07-21T02:45:49.358Z",
+            "status": "delivered",
+            "server_response": "chernik.dota@mail.ru",
+            "settings_pk": 6
+        }
+    },
+    {
+        "model": "mailing_app.attemptmailing",
+        "pk": 125,
+        "fields": {
+            "last_attempt_date_time": "2023-07-21T02:45:49.358Z",
+            "status": "delivered",
+            "server_response": "chernik.dota10@mail.ru",
+            "settings_pk": 6
+        }
+    },
+    {
+        "model": "mailing_app.attemptmailing",
+        "pk": 126,
+        "fields": {
+            "last_attempt_date_time": "2023-07-21T02:45:49.358Z",
+            "status": "delivered",
+            "server_response": "st016361@gmail.com",
+            "settings_pk": 6
+        }
+    }
+]

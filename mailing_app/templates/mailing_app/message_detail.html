@@ -1,0 +1,19 @@
+{% extends 'mailing_app/base.html' %}
+{% block content %}
+<table class="table table-dark">
+    <tbody>
+    <tr>
+        <td>Тема письма: </td>
+        <td>{{ object.title }}</td>
+    </tr>
+    <tr>
+        <td>Тело письма: </td>
+        <td>{{ object.body }}</td>
+    </tr>
+    </tbody>
+</table>
+
+<td><a class="p-2 btn btn-warning" href="{% url 'mailing_app:update_message' object.pk %}">обновить</a></td>
+<td><a class="p-2 btn btn-danger" href="{% url 'mailing_app:delete_message' object.pk %}">удалить</a></td>
+<td><a class="p-2 btn btn-info" href="{% url 'mailing_app:message_list' %}">назад</a></td>
+{% endblock %}
