@@ -145,9 +145,9 @@ EMAIL_USE_SSL = True  # ЗНАЧИТ, ЧТО наш бекенд будет об
 
 # AUTH_USER_MODEL = 'users.User'  # это ссылка на приложения, а потом дальше на модель из этого приложения.
 # LOGIN_URL = '/users/'
-# LOGIN_REDIRECT_URL = '/'
-# LOGOUT_REDIRECT_URL = '/'
-#
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
 CACHE_ENABLED = os.getenv('CACHE_ENABLED')
 
 if CACHE_ENABLED:
